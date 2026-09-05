@@ -1,0 +1,32 @@
+name: Build portable preview
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Build
+        run: ./build.ps1 -OutputName artifacts/build/TypelessAdGuard.exe
+      - name: Policy tests
+        run: ./test-policy.ps1
+      - name: Configuration tests
+        run: ./test-portable.ps1
+      - name: Relocated startup test
+        run: ./tests/portable-smoke.ps1 -GuardPath ./artifacts/build/TypelessAdGuard.exe
+      - name: Package
+        run: ./package.ps1
+      - uses: actions/upload-artifact@v7
+        with:
+          name: portable-preview
+          path: artifacts/releases/0.1.0-preview.1/*
+          if-no-files-found: error
