@@ -8,6 +8,8 @@ Typeless Ad Guard 是一个 Windows 托盘小工具，帮你自动关闭 Typeles
 
 ## 下载与使用
 
+**[下载 Windows 便携版](https://github.com/bestyunan/TypelessAdGuard/releases/download/v0.1.0-preview.1/TypelessAdGuard-0.1.0-preview.1-windows-x64.zip)** · [版本说明与校验文件](https://github.com/bestyunan/TypelessAdGuard/releases/tag/v0.1.0-preview.1)
+
 下载发布者上传的 `TypelessAdGuard-0.1.0-preview.1-windows-x64.zip`，完整解压后双击 `TypelessAdGuard.exe`。保留旁边的 `.exe.config` 文件。不要直接在 ZIP 预览窗口中运行。
 
 不需要 Codex、Python、Node 或开发工具。Windows 11 和较新的 Windows 10 通常已有所需的 .NET Framework；可参考[微软安装说明](https://learn.microsoft.com/en-us/dotnet/framework/install/)。本预览版本未在另一台物理电脑或干净虚拟机上验证，请先小范围试用。
